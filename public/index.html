@@ -1,20 +1,35 @@
-<html>
+<!DOCTYPE HTML>
+<html ng-app="app">
 <head>
 	<title>Integratic</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header class="header">
-		<nav>
-			<ul>
-				<li>Mapa</li>
-				<li>Vehículos</li>
-				<li>Remoto</li>
+	<aside role="navigation" class="sidebar">
+		<div class="brand">
+			<a href="#">Integratic</a>
+		</div>
+		<nav class="menubar">
+			<ul class="navmenu">
+				<li>
+					<a href="#/map">Mapa</a>
+				</li>
+				<li>
+					<a href="#/vehicle">Vehículos</a>
+				</li>
+				<li>
+					<a href="#/remote">Remoto</a>
+				</li>
 			</ul>
 		</nav>
-	</header>
-	<section>
-		<h1>Bienvenido!</h1>
-	</section>
+	</aside>
+	<div class="wrapper">
+		<div ng-view></div>
+	</div>
 </body>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="lib/angular/angular-route.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </html>

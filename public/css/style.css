@@ -1,11 +1,45 @@
 body{
 	background: rgb(120,120,255);
 }
-a{
-	text-decoration: none;
-}
-.header{
-	width: 12.66%;
-	height: 400px;
+.sidebar{
 	background: rgb(120,120,120);
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 220px;
+}
+.wrapper{
+	margin-left: 220px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.slide{
+	background: rgb(80,80,80);
+}
+.brand{
+	display: block;
+	background-color: #65c9bf;
+	height: 50px;
+}
+.menubar ul{
+	display: block;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menubar ul li{
+	display: list-item;
+	list-style: none;
+}
+.menubar ul.navmenu>li>a{
+	position: relative;
+	padding: 14px 10px 14px 0;
+	display: block;
+	color: #fff;
+	border-left: 2px solid transparent;
 }
