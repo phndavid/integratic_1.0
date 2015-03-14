@@ -1,0 +1,11 @@
+body{
+	background: rgb(120,120,255);
+}
+a{
+	text-decoration: none;
+}
+.header{
+	width: 12.66%;
+	height: 400px;
+	background: rgb(120,120,120);
+}
