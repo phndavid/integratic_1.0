@@ -2,7 +2,7 @@ body{
 	background: rgb(120,120,255);
 }
 .sidebar{
-	background-color: #191547;
+	background-color: #77CAD4;
 	display: block;
 	position: fixed;
 	top: 0;
@@ -64,7 +64,7 @@ body{
 	padding-right: 15px;
 }
 #map-canvas{
-	width: 500px;
-	height: 400px;
+	width: 100%;
+	height: 600px;
 	background-color: #CCC;
 }
