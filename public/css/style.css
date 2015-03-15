@@ -2,7 +2,7 @@ body{
 	background: rgb(120,120,255);
 }
 .sidebar{
-	background: rgb(120,120,120);
+	background-color: #191547;
 	display: block;
 	position: fixed;
 	top: 0;
@@ -19,7 +19,9 @@ body{
 	width: 100%;
 }
 .slide{
-	background: rgb(80,80,80);
+	background: #D6EEDC;
+	width: 100%;
+	height: 100%;
 }
 .brand{
 	display: block;
@@ -42,4 +44,27 @@ body{
 	display: block;
 	color: #fff;
 	border-left: 2px solid transparent;
+}
+#page-heading{
+	background-color: #fff;
+	padding: 0 20px;
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 15px;
+}
+#page-heading>.page-title{
+	margin: 0;
+	padding: 10px 0;
+	font-weight: 300;
+	color: #959ea9;
+}
+.container{
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#map-canvas{
+	width: 500px;
+	height: 400px;
+	background-color: #CCC;
 }
