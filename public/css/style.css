@@ -1,8 +1,9 @@
 body{
-	background: rgb(120,120,255);
+	background: #fff;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .sidebar{
-	background-color: #77CAD4;
+	background-color: #e8e8e8;
 	display: block;
 	position: fixed;
 	top: 0;
@@ -24,26 +25,37 @@ body{
 	height: 100%;
 }
 .brand{
-	display: block;
-	background-color: #65c9bf;
-	height: 50px;
+    background-color: #ffffff;
+    display: block;
+    width: 220px;
+    height: 50px;
+}
+.brand #title-brand{
+    display: inline-block;
+}
+.brand #title-brand>h3{
+	margin: 0;
+}
+.brand #logo{
+	margin-left: 20px;
+	height:50px;
+	width: 50px; 
 }
 .menubar ul{
 	display: block;
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 10px;
 }
 .menubar ul li{
 	display: list-item;
 	list-style: none;
 }
 .menubar ul.navmenu>li>a{
-	position: relative;
-	padding: 14px 10px 14px 0;
 	display: block;
-	color: #fff;
 	border-left: 2px solid transparent;
+	position: relative;
+	padding: 14px 10px 14px 0px;
 }
 #page-heading{
 	background-color: #fff;
