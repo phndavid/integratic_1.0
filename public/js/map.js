@@ -6,10 +6,10 @@ angular.module('app')
 			template:'<div></div>',
 			replace:true,
 			link:function(scope,element,attrs){
-				var latLng = new google.maps.LatLng(3.420555600000000000,-76,522222199999990000);
+				var latLng = new google.maps.LatLng(3.3422583, -76.529313);
 				var mapOptions = {
 					center: latLng,
-					zoom:8,
+					zoom:15,
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				}
 				var map = new google.maps.Map(document.getElementById(attrs.id),mapOptions)

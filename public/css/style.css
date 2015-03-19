@@ -1,12 +1,25 @@
+a{
+	font-size: 16px;
+}
 body{
 	background: #fff;
 	font-family: 'Open Sans Condensed', sans-serif;
+	width: 100%;
+	height: 100%;
 }
+header{
+	background-color: #eaeff5;
+	overflow: hidden;
+	height: 50px;
+}
+ul li{
+	list-style: none; 
+}
+
 .sidebar{
 	background-color: #e8e8e8;
 	display: block;
 	position: fixed;
-	top: 0;
 	left: 0;
 	height: 100%;
 	width: 220px;
@@ -14,19 +27,18 @@ body{
 .wrapper{
 	margin-left: 220px;
 	position: fixed;
-	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 }
 .slide{
-	background: #D6EEDC;
+	background: #eaeff5;
 	width: 100%;
 	height: 100%;
 }
 .brand{
     background-color: #ffffff;
-    display: block;
+    display: inline-block;
     width: 220px;
     height: 50px;
 }
@@ -41,27 +53,47 @@ body{
 	height:50px;
 	width: 50px; 
 }
+.menubar{
+	margin-top: 80px;
+}
 .menubar ul{
 	display: block;
 	list-style: none;
 	padding: 0;
-	margin: 10px;
 }
 .menubar ul li{
 	display: list-item;
 	list-style: none;
+	border-bottom: 1px solid #dae1e8;
+  	box-shadow: 0 2px 1px -1px #FFFFFF;
+  	margin-right: 20px; 
+  	margin-left: 20px;
+
+}
+.menubar ul li img{
+	padding-right: 15px;
+	padding-left: 10px;
+
 }
 .menubar ul.navmenu>li>a{
 	display: block;
 	border-left: 2px solid transparent;
 	position: relative;
 	padding: 14px 10px 14px 0px;
+	font-size: 1.2em;
+	text-decoration: none;
+
 }
+.menubar ul li a:hover{
+	/* AQUI VA ALGUN EFECTO CHEVERE QUE LE VAMOS PONER */
+}
+
 #page-heading{
 	background-color: #fff;
+	border-bottom: 1px solid #E7E7E7;
 	padding: 0 20px;
-	border-bottom: 1px solid #e7e7e7;
 	margin-bottom: 15px;
+	height: 50px;
 }
 #page-heading>.page-title{
 	margin: 0;
@@ -69,14 +101,29 @@ body{
 	font-weight: 300;
 	color: #959ea9;
 }
-.container{
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+.regiter-vehicle{
+	margin-top: 20px;
+}
+.sect-vehicle{
+	margin-top: 20px;
+}
+.icon-rubbish>img{
+	height: 20px;
+	width: 20px;
+	margin-left: 10px;
+}
+.turnoff{
+	margin-left: 2px;
+}
+.list-vehicle>li{
+	padding: 5px 10px ;
+	border-bottom: 1px solid #E7E7E7;
+}
+.list-vehicle>li>a{
+	text-decoration: none;
 }
 #map-canvas{
 	width: 100%;
-	height: 600px;
+	height: 500px;
 	background-color: #CCC;
 }
