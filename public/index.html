@@ -10,28 +10,78 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<div class="brand">
-                <img id="logo" src="img/integratic.jpg" >
-                <span id="title-brand"><h3>Integratic</h3></span>
-        </div>
-	</header>
-	<aside role="navigation" class="sidebar">
-		<nav class="menubar">
-			<ul class="navmenu">
-				<li><a href="#/map"><span><img src="img/location74.png"></span>Ubiación</a></li>
-				<li><a href="#/vehicle"><span><img src="img/sedan3.png"></span>Vehículos</a></li>
-				<li><a href="#/remote-vehicle"><span><img src="img/remote4.png"></span>Remoto</a></li>
-			</ul>
-		</nav>
-	</aside>
-	<div class="wrapper">
-		<div ng-view></div>
+	
+   <header role="navigation">
+	<!--AQUI VA EL LOGO, NOMBRE Y AVATAR (QUIÑÓNEZ)-->
+    </header>
+	<div class="main">
+	<!--Textbox search-->	
+	  <div class="input-group">
+		<input type="text" placeholder="Buscar..." required class="search">
+	    <input type="button" value="Buscar" class="btn-search">
+	  </div>
+	  <!--Aside list-vehicle -->
+	  <aside class="data-list" id="style-3">
+	     <div class="list-group">
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img src="./img/pointer.png"> Vehículo 1 </h4>
+			  <p class="list-group-item-text">Estado: Apagado</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			</a>
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 2</h4>
+			  <p class="list-group-item-text">Estado: Apagado</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			</a>
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 3</h4>
+			  <p class="list-group-item-text">Estado: Encendido</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			</a>
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 4</h4>
+			  <p class="list-group-item-text">Estado: Apagado</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			</a>
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 5</h4>
+			  <p class="list-group-item-text">Estado: Encendido</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			</a>
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 6</h4>
+			  <p class="list-group-item-text">Estado: Encendido</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			  
+			</a>
+			<a href="" class="list-group-item">
+			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 7</h4>
+			  <p class="list-group-item-text">Estado: Apagado</p>
+			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
+			</a>
+		</div> 
+	  </aside>
+	  <!--Options register-vehicle-->
+	  <div class="options">
+	  	<input type="checkbox">
+	  	<p class="select-all">Seleccionar todo</p>
+	  	<button class="btn-search">Registrar</button>
+	  </div>
+	  <!--Foooter copyright-->
+	  <footer id="footer">
+	      <div class="container">
+			<p>© 2015 Integratic</p>
+	      </div>
+	  </footer>
+	</div>
+	<!--Google map -->
+	<div class="wrapper-map">
+	    <my-maps id="map-canvas"></my-maps>
 	</div>
 </body>
 <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAEUCp8M_BNBLH_De0n7NvEbfUgQPw9WUQ&sensor=false">
- </script>
+</script>
 <!--Angularjs -->
 <script type="text/javascript" src="lib/angular/angular.js"></script>
 <script type="text/javascript" src="lib/angular/angular-route.js"></script>

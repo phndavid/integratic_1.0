@@ -4,7 +4,7 @@ angular.module('app',['ngRoute'])
     	'use strict';
         $routeProvider.when('/',
             {
-                templateUrl: 'view/home.html'
+                templateUrl: 'view/map.html'
             })
             .when('/map',
             {
