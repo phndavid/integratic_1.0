@@ -23,49 +23,58 @@
 	  <!--Aside list-vehicle -->
 	  <aside class="data-list" id="style-3">
 	     <div class="list-group">
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img src="./img/pointer.png"> Vehículo 1 </h4>
+			<div class="list-group-item">
+			  <h4 class="list-group-item-heading"><a href=""><img src="./img/pointer.png"></a> Vehículo 1 </h4>
 			  <p class="list-group-item-text">Estado: Apagado</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			</a>
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 2</h4>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
+			<div class="list-group-item">
+			  <h4 class="list-group-item-heading"><a href=""><img class="unpointer" src="./img/pointer.png"></a> Vehículo 2</h4>
 			  <p class="list-group-item-text">Estado: Apagado</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			</a>
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 3</h4>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
+			<div class="list-group-item">
+			  <h4 class="list-group-item-heading"><a><img class="unpointer" src="./img/pointer.png"></a> Vehículo 3</h4>
 			  <p class="list-group-item-text">Estado: Encendido</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			</a>
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 4</h4>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
+			<div  class="list-group-item">
+			  <h4 class="list-group-item-heading"><a><img class="unpointer" src="./img/pointer.png"></a> Vehículo 4</h4>
 			  <p class="list-group-item-text">Estado: Apagado</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			</a>
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 5</h4>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
+			<div class="list-group-item">
+			  <h4 class="list-group-item-heading"><a><img class="unpointer" src="./img/pointer.png"></a> Vehículo 5</h4>
 			  <p class="list-group-item-text">Estado: Encendido</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			</a>
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 6</h4>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
+			<div class="list-group-item">
+			  <h4 class="list-group-item-heading"><a><img class="unpointer" src="./img/pointer.png"></a> Vehículo 6</h4>
 			  <p class="list-group-item-text">Estado: Encendido</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			  
-			</a>
-			<a href="" class="list-group-item">
-			  <h4 class="list-group-item-heading"><img class="unpointer" src="./img/pointer.png"> Vehículo 7</h4>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
+			<div class="list-group-item">
+			  <h4 class="list-group-item-heading"><a><img class="unpointer" src="./img/pointer.png"></a> Vehículo 7</h4>
 			  <p class="list-group-item-text">Estado: Apagado</p>
 			  <p class="list-group-item-text">Dirección: Calle 45 # 86-47</p>
-			</a>
+			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
+			</div>
 		</div> 
 	  </aside>
 	  <!--Options register-vehicle-->
 	  <div class="options">
 	  	<input type="checkbox">
 	  	<p class="select-all">Seleccionar todo</p>
-	  	<button class="btn-search">Registrar</button>
+	    <a href = "javascript:void(0)" 
+	  onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+	  		<button class="btn-search">Registra</button>
+	  	</a>
 	  </div>
 	  <!--Foooter copyright-->
 	  <footer id="footer">
@@ -76,6 +85,12 @@
 	</div>
 	<!--Google map -->
 	<div class="wrapper-map">
+		<div id="light" class="white_content">
+			<h1>Registrar Vehículo</h1>
+			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+
+		</div>
+        <div id="fade" class="black_overlay"></div>
 	    <my-maps id="map-canvas"></my-maps>
 	</div>
 </body>
