@@ -82,6 +82,44 @@
 /**
 * CLASSES
 */
+.brand{
+  background-color:#ffffff;
+  position: relative;
+  min-height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 198px;
+}
+.logo{
+  position: absolute;
+  left:0px;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+.text-brand{
+  position: fixed;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  left:80px;
+
+  }
+  .data-user{
+    margin-right: 20px;
+    float: right;
+    width: 200px;
+    height: 50px;
+  }
+  .name-user{
+   color:#ffffff;
+   display: inline-block;
+   margin: 0px;
+  }
+  .img-user{
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+  }
   .black_overlay{
     display: none;
     position: absolute;
