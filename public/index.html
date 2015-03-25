@@ -22,50 +22,12 @@
 	  </div>
 	  <!--Aside list-vehicle -->
 	  <aside class="data-list" id="style-3">
-	     <div class="list-group">
-			<div class="list-group-item">
-			  	<h4 class="list-group-item-heading"><a href=""><img src="./img/pointer.png"></a> Vehiculo-1 </h4>
-			  	<p class="list-group-item-text">Modelo: Optra 2013</p>
-			  	<p class="list-group-item-text">Placa: VCH-123 </p>
+	     <div class="list-group" ng-controller="VehiculesController">
+			<div class="list-group-item" ng-repeat="vehicule in vehicules">
+			  	<h4 class="list-group-item-heading"><a href=""><img src="./img/pointer.png"></a> Vehiculo-{{$index+1}} </h4>
+			  	<p class="list-group-item-text">{{vehicule.model}}</p>
+			  	<p class="list-group-item-text">{{vehicule.placa}}</p>
 			  	<p class="list-group-item-text"><a href="javascript:void(0)" onclick = "document.getElementById('lightreg').style.display='block';document.getElementById('fadereg').style.display='block'" class="list-group-item-text" >ver mas</a></p>	
-			</div>
-			<div class="list-group-item">
-			  <h4 class="list-group-item-heading"><a href=""><img class="unpointer" src="./img/pointer.png"></a> Vehiculo-2</h4>
-			  <p class="list-group-item-text">Modelo: Captiva 2014</p>
-			  <p class="list-group-item-text">Placa: DAZ-456</p>
-			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
-			</div>
-			<div class="list-group-item">
-			  <h4 class="list-group-item-heading"><a href=" "><img class="unpointer" src="./img/pointer.png"></a> Vehiculo-3</h4>
-			  <p class="list-group-item-text">Modelo: Mazda 3 2014</p>
-			  <p class="list-group-item-text">Placa: HCO-456</p>
-			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
-			</div>
-			<div  class="list-group-item">
-			  <h4 class="list-group-item-heading"><a href=""><img class="unpointer" src="./img/pointer.png"></a> Vehiculo-4</h4>
-			  <p class="list-group-item-text">Modelo: Tucson 2014</p>
-			  <p class="list-group-item-text">Placa: VCH-345</p>
-			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
-			</div>
-			<div class="list-group-item">
-			  <h4 class="list-group-item-heading"><a href=""><img class="unpointer" src="./img/pointer.png"></a> Vehiculo-5</h4>
-			  <p class="list-group-item-text">Modelo: Aveo 2014</p>
-			  <p class="list-group-item-text">Placa: CVZ-678</p>
-			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
-			</div>
-			<div class="list-group-item">
-			  <h4 class="list-group-item-heading"><a href=""><img class="unpointer" src="./img/pointer.png"></a> Vehiculo-6</h4>
-			  <p class="list-group-item-text">Modelo: Clio 2010</p>
-			  <p class="list-group-item-text">Placa: DAZ-890</p>
-			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
-			</div>
-			<div class="list-group-item">
-			  <h4 class="list-group-item-heading">
-			  	<a href=""><img class="unpointer" src="./img/pointer.png"></a> Vehiculo-7</h4>
-			  <p class="list-group-item-text">Modelo: Tiida 2013</p>
-			  <p class="list-group-item-text">Placa: FGH-987</p>
-			  <p class="list-group-item-text"><a href="" class="list-group-item-text" >ver mas</a></p>
-			</div>
 		</div> 
 	  </aside>
 	  <!--Options register-vehicle-->
@@ -90,12 +52,12 @@
 		<div id="light" class="white_content">
 			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img src="img/bad7.png"></a>
 			<h1>Registrar Vehículo</h1>
-			<div class="login-card">
-				<form >
-					<input type="text" name="model" placeholder="Modelo">
-    				<input type="text" name="placa" placeholder="Placa">
-    				<input type="number" name="numtracker" placeholder="Numero del Localizador">
-    				<input type="submit" name="login" class="login login-submit" value="Registrar">
+			<div class="login-card" ng-controller="VehiculesController">
+				<form>
+					<input type="text" name="model" placeholder="Modelo" ng-model="newVehicule.model">
+    				<input type="text" name="placa" placeholder="Placa" ng-model="newVehicule.placa">
+    				<input type="number" name="numtracker" placeholder="Numero del Localizador" ng-model="newVehicule.trackerNumber">
+    				<input type="submit" name="login" class="login login-submit" value="Registrar" ng-click="addVehicule()">
 				</form>
 			</div>
 		</div>
