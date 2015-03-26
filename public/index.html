@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" href="img/integratic.jpg">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animhate.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -14,20 +15,19 @@
 		<div class="col-md-2 col-sm-3 brand"> 
 		  <img src="img/integratic.jpg" class="logo">
 		  <h2 class="text-brand">Integratic</h2>	
-	    </div>
-	      
+	    </div>	      
 	    <div class="data-user"> 
 			<h3 class="name-user">Juan Marmolejo</h3>
 			<img src="img/avatar.jpg" class="img-user">		
 	    </div>
     </header>
 	<div class="main">
-	<!--Textbox search-->	
+	<!--search's textbox-->	
 	  <div class="input-group">
 		<input type="text" placeholder="Buscar..." required class="search">
 	    <input type="button" value="Buscar" class="btn-search">
 	  </div>
-	  <!--Aside list-vehicle -->
+	  <!--vehicules aside list -->
 	  <aside class="data-list" id="style-3">
 	     <div class="list-group" ng-controller="VehiculesController">
 			<div class="list-group-item" ng-repeat="vehicule in vehicules">
@@ -37,7 +37,7 @@
 			  	<p class="list-group-item-text"><a href="javascript:void(0)" onclick = "document.getElementById('lightreg').style.display='block';document.getElementById('fadereg').style.display='block'" class="list-group-item-text" >ver mas</a></p>	
 		</div> 
 	  </aside>
-	  <!--Options register-vehicle-->
+	  <!--vehicule registering options-->
 	  <div class="options">
 	  	<input type="checkbox">
 	  	<p class="select-all">Seleccionar todo</p>
@@ -56,7 +56,7 @@
 	<!--Google map -->
 	<div class="wrapper-map">
 		<!-- Vehicule register dialog -->
-		<div id="light" class="white_content">
+		<div id="light" class="white_content animated zoomIn">
 			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img src="img/bad7.png"></a>
 			<h1>Registrar Vehículo</h1>
 			<div class="login-card" ng-controller="VehiculesController">
@@ -70,7 +70,7 @@
 		</div>
         <div id="fade" class="black_overlay"></div>
         <!-- Remote control dialog -->
-        <div id="lightreg" class="white_content">
+        <div id="lightreg" class="white_content animated zoomIn">
 			<a href = "javascript:void(0)" onclick = "document.getElementById('lightreg').style.display='none';document.getElementById('fadereg').style.display='none'"><img src="img/bad7.png"></a>
 			<h1>Informacion general</h1>
 			<div class="login-card">
