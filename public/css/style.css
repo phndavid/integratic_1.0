@@ -9,7 +9,6 @@
 /**
 * LABELS
 */
-
   body{
   	background: #fff;
   	font-family: 'Open Sans Condensed', sans-serif;
@@ -87,28 +86,28 @@
 /**
 * CLASSES
 */
-.brand{
-  background-color:#ffffff;
-  position: relative;
-  min-height: 50px;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 198px;
-}
-.logo{
-  position: absolute;
-  left:0px;
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-.text-brand{
-  position: fixed;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  left:80px;
-
+  .brand{
+    background-color:#ffffff;
+    position: relative;
+    min-height: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 198px;
   }
+  .logo{
+    position: absolute;
+    left:0px;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+  .text-brand{
+    position: fixed;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    left:80px;
+
+    }
   .data-user{
     margin-right: 20px;
     float: right;
