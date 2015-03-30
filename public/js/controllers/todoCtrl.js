@@ -1,8 +1,6 @@
 angular.module('app')
     .controller('VehiculesController' ,['$scope','vehiculesFactory', function($scope,vehiculesFactory){
     $scope.vehicules = vehiculesFactory.getVehicules();
-    var actualVehicule = null; 
-    $scope.actualVehicule = actualVehicule; 
     $scope.addVehicule = function(){
         var model = $scope.newVehicule.model;
         var placa = $scope.newVehicule.placa;
@@ -16,10 +14,8 @@ angular.module('app')
             alert("Por favor, ingrese todos los datos")
         }
     }
-    $scope.searchVehicule = function(vehicule){
-        actualVehicule = vehicule; 
-
-        console.log(actualVehicule) 
+    $scope.selectVehicule = function(vehicule){
+        $scope.actualVehicule = vehicule; 
     }  
 }]);
 

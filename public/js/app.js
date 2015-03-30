@@ -2,17 +2,11 @@ angular.module('app',['ngRoute'])
  	.config(function($routeProvider)
      {	
      	'use strict';
-         $routeProvider.when('/',
+         $routeProvider.when('/infoView',
             {
-                controller: 'VehiculesController'
-            })
-            .when('/infoView',
-            {
-                controller: 'VehiculesController',
                 templateUrl: 'view/infoView.html'
             }
-            )
-            .otherwise(
+            ).otherwise(
             {
                 redirectTo: '/'
          	})
