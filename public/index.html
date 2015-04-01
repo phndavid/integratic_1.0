@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="app">
+<html ng-app="app" lang="es" ng-clock> 
 <head>
 	<title>Integratic</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -9,31 +9,39 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
-<body>
-	
+<body ng-controller="VehiculesController">
    <header role="navigation">
-	<!--AQUI VA EL LOGO, NOMBRE Y AVATAR (QUIÑÓNEZ)-->
+		<div class="col-md-2 col-sm-3 brand"> 
+		  <img src="img/integratic.jpg" class="logo">
+		  <h2 class="text-brand">Integratic</h2>	
+	    </div>	      
+	    <div class="data-user"> 
+			<h3 class="name-user">Juan Marmolejo</h3>
+			<img src="img/avatar.jpg" class="img-user">		
+	    </div>
     </header>
 	<div class="main">
-	<!--Textbox search-->	
+	<!--search's textbox-->	
 	  <div class="input-group">
-		<input type="text" placeholder="Buscar..." required class="search">
-	    <input type="button" value="Buscar" class="btn-search">
+		<input type="text" placeholder="Buscar" required class="search" data-ng-model="sear">
 	  </div>
-	  <!--Aside list-vehicle -->
+	  <!--vehicules aside list -->
 	  <aside class="data-list" id="style-3">
-	     <div class="list-group" ng-controller="VehiculesController">
-			<div class="list-group-item" ng-repeat="vehicule in vehicules">
-			  	<h4 class="list-group-item-heading"><a href=""><img src="./img/pointer.png"></a> Vehiculo-{{$index+1}} </h4>
+	     <div class="list-group" >
+			<div class="list-group-item" ng-repeat="vehicule in vehicules|filter:sear">
+			  	<h4 class="list-group-item-heading"><a href=""><img src="./img/pointer.png"></a> Vehiculo-{{vehicule.id}} </h4>
 			  	<p class="list-group-item-text">{{vehicule.model}}</p>
 			  	<p class="list-group-item-text">{{vehicule.placa}}</p>
-			  	<p class="list-group-item-text"><a href="javascript:void(0)" onclick = "document.getElementById('lightreg').style.display='block';document.getElementById('fadereg').style.display='block'" class="list-group-item-text" >ver mas</a></p>	
-		</div> 
+			  	<p class="list-group-item-text">
+			  	<a href="#/infoView"  ng-click = "selectVehicule(vehicule)" onclick="document.getElementById('lightreg').style.display='block';document.getElementById('fadereg').style.display='block';" class="list-group-item-text">ver mas</a>
+			  	</p>
+			  </div>	
+			</div> 
 	  </aside>
-	  <!--Options register-vehicle-->
+	  <!--vehicule registering options-->
 	  <div class="options">
 	  	<input type="checkbox">
-	  	<p class="select-all">Seleccionar todo</p>
+	  	<p class="select-all">Marcar todo</p>
 	    <a href = "javascript:void(0)" 
 	  onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
 	  		<button class="btn-search">Registrar</button>
@@ -49,13 +57,13 @@
 	<!--Google map -->
 	<div class="wrapper-map">
 		<!-- Vehicule register dialog -->
-		<div id="light" class="white_content">
+		<div id="light" class="white_content animated zoomIn">
 			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img src="img/bad7.png"></a>
 			<h1>Registrar Vehículo</h1>
 			<div class="login-card" ng-controller="VehiculesController">
 				<form>
 					<input type="text" name="model" placeholder="Modelo" ng-model="newVehicule.model">
-    				<input type="text" name="placa" placeholder="Placa" ng-model="newVehicule.placa">
+    				<input type="text" name="placa" placeholder="Placa" ng-model="newVehicule.placa" required>
     				<input type="number" name="numtracker" placeholder="Numero del Localizador" ng-model="newVehicule.trackerNumber">
     				<input type="submit" name="login" class="login login-submit" value="Registrar" ng-click="addVehicule()">
 				</form>
@@ -63,29 +71,7 @@
 		</div>
         <div id="fade" class="black_overlay"></div>
         <!-- Remote control dialog -->
-        <div id="lightreg" class="white_content">
-			<a href = "javascript:void(0)" onclick = "document.getElementById('lightreg').style.display='none';document.getElementById('fadereg').style.display='none'"><img src="img/bad7.png"></a>
-			<h1>Informacion general</h1>
-			<div class="login-card">
-				<div class="row general">
-					<div class="col-md-6">Estado:</div>
-					<div class="col-md-6">Apagado</div>
-				</div>
-				<div class="row general">
-					<div class="col-md-6">Ubicacion:</div>
-					<div class="col-md-6">cra103 #11-40</div>
-				</div>				
-				<div class="row general">
-					<div class="col-md-6">Puertas:</div>
-					<div class="col-md-6">Cerradas</div>
-				</div>
-				<div class="row general" id="general-info-buttom">
-					<div class="col-md-6"><input type="submit" value="Encender/Apagar" /></div>
-					<div class="col-md-6"><input type="submit" value="Otra opcion"></div>
-				</div>
-			</div>
-		</div>
-        <div id="fadereg" class="black_overlay"></div>
+        		<div ng-view=""></div>
 	    <my-maps id="map-canvas"></my-maps>
 	</div>
 </body>
@@ -97,5 +83,8 @@
 <script type="text/javascript" src="lib/angular/angular-route.js"></script>
 <script type="text/javascript" src="lib/angular/angular-google-maps.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/directives/map.js"></script>
+<script type="text/javascript" src="js/controllers/todoCtrl.js"></script>
+<script type="text/javascript" src="js/factory/vehicleFactory.js"></script>
+
 </html>

@@ -9,7 +9,6 @@
 /**
 * LABELS
 */
-
   body{
   	background: #fff;
   	font-family: 'Open Sans Condensed', sans-serif;
@@ -87,6 +86,44 @@
 /**
 * CLASSES
 */
+  .brand{
+    background-color:#ffffff;
+    position: relative;
+    min-height: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 198px;
+  }
+  .logo{
+    position: absolute;
+    left:0px;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+  .text-brand{
+    position: fixed;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    left:80px;
+
+    }
+  .data-user{
+    margin-right: 20px;
+    float: right;
+    width: 200px;
+    height: 50px;
+  }
+  .name-user{
+   color:#ffffff;
+   display: inline-block;
+   margin: 0px;
+  }
+  .img-user{
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+  }
   .black_overlay{
     display: none;
     position: absolute;
@@ -194,7 +231,7 @@
     padding:8px 15px;
     background: #e8e8e8;
     border:0px solid #dbdbdb;
-    width: 67%;
+    width: 136%;
   }
   .select-all{
     display: inline-block;
@@ -239,5 +276,41 @@
     width: 100%;
   }
   /**
-  * dialog
+  * dialog's animation
   */
+  .animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  -vendor-animation-duration: 0s;
+
+  animation-name: zoomIn;
+}
+  @-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -ms-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
