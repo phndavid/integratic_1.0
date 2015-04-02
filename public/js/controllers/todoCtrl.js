@@ -153,6 +153,7 @@ angular.module('app')
             showAllMarkers(); 
         }
     } 
+    console.log('concoc')
     $scope.selectTheMarker = function(id){ 
         var theMarker = arrMarkers[0]
         console.log(theMarker)

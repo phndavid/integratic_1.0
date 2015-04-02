@@ -20,14 +20,14 @@
 			<img src="img/avatar.jpg" class="img-user">		
 	    </div>
     </header>
-	<div class="main">
+	<div class="main" ng-controller="MapController">
 	<!--search's textbox-->	
 	  <div class="input-group">
 		<input type="text" placeholder="Buscar" required class="search" data-ng-model="sear">
 	  </div>
 	  <!--vehicules aside list -->
 	  <aside class="data-list" id="style-3">
-	     <div class="list-group" ng-controller="MapController">
+	     <div class="list-group">
 			<div class="list-group-item" ng-repeat="vehicule in vehicules|filter:sear">
 			  	<h4 class="list-group-item-heading"><a href="" ng-click="selectTheMarker($index)" class="map-pointer" id="{{$index}}"><img src="./img/pointer.png"></a> Vehiculo-{{vehicule.id}} </h4>
 			  	<p class="list-group-item-text">{{vehicule.model}}</p>
@@ -39,7 +39,7 @@
 			</div> 
 	  </aside>
 	  <!--vehicule registering options-->
-	  <div class="options" ng-controller="MapController">
+	  <div class="options">
 	  	<input type="checkbox" checked ng-click="selectAll()">
 	  	<p class="select-all">Marcar todo</p>
 	    <a href = "javascript:void(0)" 
