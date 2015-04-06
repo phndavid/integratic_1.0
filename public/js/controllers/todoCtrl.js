@@ -159,11 +159,13 @@ angular.module('app')
         }
         if(allMarked){
             check.checked = 1;
+            checkbox = true; 
         } 
     }
     var checkStateDisable = function(){ 
         var check = document.getElementById('selectAll-checkbox'); 
         check.checked = 0; 
+        checkbox = false; 
     }
     $scope.selectAll = function(){
         if(checkbox){

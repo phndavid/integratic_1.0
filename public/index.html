@@ -33,7 +33,7 @@
 			  	<p class="list-group-item-text">{{vehicule.model}}</p>
 			  	<p class="list-group-item-text">{{vehicule.placa}}</p>
 			  	<p class="list-group-item-text">
-			  	<a href="#/infoView"  ng-click = "selectVehicule(vehicule)" onclick="document.getElementById('lightreg').style.display='block';document.getElementById('fadereg').style.display='block';" class="list-group-item-text">ver mas</a>
+			  	<a href="#/infoView"  ng-click = "selectVehicule(vehicule)" onclick="document.getElementById('lightreg').style.display='block';document.getElementById('fadereg').style.display='block';" class="list-group-item-text">ver más</a>
 			  	</p>
 			  </div>	
 			</div> 
@@ -71,7 +71,7 @@
 		</div>
         <div id="fade" class="black_overlay"></div>
         <!-- Remote control dialog -->
-        	<div ng-view=""></div>
+        	<div ng-view="#/infoView"></div>
 	    	<div id="map-canvas"></div>
 	</div>
 </body>
