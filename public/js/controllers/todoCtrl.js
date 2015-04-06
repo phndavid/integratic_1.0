@@ -120,12 +120,14 @@ angular.module('app')
         var pointers = document.getElementById(id);
         pointers.className = 'map-pointer';
         arrMarkers[id].setVisible(true);
+        checkStateEnable(); 
 
     }
     var hideTheMarker = function(id){       
         var pointers = document.getElementById(id);
         pointers.className = 'unpointer';
         arrMarkers[id].setVisible(false); 
+        checkStateDisable(); 
     }
     var showAllMarkers = function(){
         for( var i =0 ; i < arrMarkers.length; i++ ) {
@@ -146,6 +148,23 @@ angular.module('app')
         }  
         checkbox = false;
     }
+    var checkStateEnable = function(){ 
+        var check = document.getElementById('selectAll-checkbox');
+        var allMarked = true; 
+        for(var i=0; i<arrMarkers.length;i++){
+            if(!arrMarkers[i].getVisible()){
+                allMarked = false; 
+                break; 
+            }
+        }
+        if(allMarked){
+            check.checked = 1;
+        } 
+    }
+    var checkStateDisable = function(){ 
+        var check = document.getElementById('selectAll-checkbox'); 
+        check.checked = 0; 
+    }
     $scope.selectAll = function(){
         if(checkbox){
             hideAllMarkers();
@@ -153,15 +172,13 @@ angular.module('app')
             showAllMarkers(); 
         }
     } 
-    console.log('concoc')
+
     $scope.selectTheMarker = function(id){ 
         var theMarker = arrMarkers[0]
-        console.log(theMarker)
         if(arrMarkers[id].getVisible()){
             hideTheMarker(id);
         }else{
             showTheMarker(id);
-            //comentario
         }
     } 
 
