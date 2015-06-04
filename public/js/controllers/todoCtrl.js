@@ -1,6 +1,7 @@
 angular.module('app')
     .controller('VehiculesController' ,['$scope','vehiculesFactory', function($scope,vehiculesFactory){
     $scope.vehicules = vehiculesFactory.getVehicules();
+    console.log($scope.vehicules[2])
     $scope.addVehicule = function(){
         var model = $scope.newVehicule.model;
         var placa = $scope.newVehicule.placa;
