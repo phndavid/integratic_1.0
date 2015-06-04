@@ -29,7 +29,7 @@
 	  <aside class="data-list" id="style-3">
 	     <div class="list-group">
 			<div class="list-group-item" ng-repeat="vehicule in vehicules|filter:sear">
-			  	<h4 class="list-group-item-heading"><a href="" ng-click="selectTheMarker($index)" class="map-pointer" id="{{$index}}"><img src="./img/pointer.png"></a> Vehiculo-{{vehicule.id}} </h4>
+			  	<h4 class="list-group-item-heading"><a href="" ng-click="selectTheMarker(vehicule.id)" class="map-pointer" id="{{vehicule.id}}"><img src="./img/pointer.png"></a> Vehiculo-{{vehicule.id}} </h4>
 			  	<p class="list-group-item-text">{{vehicule.model}}</p>
 			  	<p class="list-group-item-text">{{vehicule.placa}}</p>
 			  	<p class="list-group-item-text">
@@ -75,6 +75,13 @@
 	    	<div id="map-canvas"></div>
 	</div>
 </body>
+<script type="text/javascript" src="js/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io('http://200.3.193.93:8090');
+	socket.on('connect',function(){
+		console.log('LLEGO ALGO');
+	});
+</script>
 <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAEUCp8M_BNBLH_De0n7NvEbfUgQPw9WUQ&sensor=false">
 </script>

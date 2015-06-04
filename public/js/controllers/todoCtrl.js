@@ -1,7 +1,6 @@
 angular.module('app')
     .controller('VehiculesController' ,['$scope','vehiculesFactory', function($scope,vehiculesFactory){
     $scope.vehicules = vehiculesFactory.getVehicules();
-    console.log($scope.vehicules[2])
     $scope.addVehicule = function(){
         var model = $scope.newVehicule.model;
         var placa = $scope.newVehicule.placa;
@@ -101,40 +100,49 @@ angular.module('app')
         ]                       
     }
     var checkbox = true; 
-    var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+    var theMap = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
     var arrMarkers = []; 
     var incializeMarkers = function(){ 
         var locations = vehiculesFactory.getLocations();
         var markers = [];
         for (var i=0;i<locations.length;i++){
-            arrMarkers.push( new google.maps.Marker({
-                        position: new google.maps.LatLng(locations[i].lat,locations[i].lng),
-                        map: map,
-                        visible: true,
-                        icon:'http://gavinwillis.co.uk/newimages/pointer.png'
-                    }));
+            arrMarkers[i] = {id: locations[i].id,map:new google.maps.Marker({
+                                                            position: new google.maps.LatLng(locations[i].lat,locations[i].lng),
+                                                            map: theMap,
+                                                            visible: true,
+                                                            icon:'http://gavinwillis.co.uk/newimages/pointer.png'
+                            })};
         }  
     }
     incializeMarkers();
-
+    var findTheMarker = function(theId){
+        var theMarker; 
+        for( var i =0 ; i < arrMarkers.length; i++ ) {
+            if(arrMarkers[i].id==theId){
+                theMarker = arrMarkers[i];
+            }
+        }
+        return theMarker; 
+    }
     var showTheMarker = function(id){
         var pointers = document.getElementById(id);
         pointers.className = 'map-pointer';
-        arrMarkers[id].setVisible(true);
+        findTheMarker(id).map.setVisible(true);
         checkStateEnable(); 
 
     }
     var hideTheMarker = function(id){       
         var pointers = document.getElementById(id);
         pointers.className = 'unpointer';
-        arrMarkers[id].setVisible(false); 
+        findTheMarker(id).map.setVisible(false);
+        socket.emit('hideTheMarker','probando'); 
         checkStateDisable(); 
     }
     var showAllMarkers = function(){
         for( var i =0 ; i < arrMarkers.length; i++ ) {
             //$scope.arrMarkers[i].setMap($scope.map);
-            arrMarkers[i].setVisible(true);
-            var pointers = document.getElementById(i);
+            arrMarkers[i].map.setVisible(true);
+            var pointers = document.getElementById(arrMarkers[i].id);
             pointers.className = 'map-pointer'
         }
         checkbox=true;
@@ -143,8 +151,8 @@ angular.module('app')
     var hideAllMarkers = function(){
         for( var i = 0; i < arrMarkers.length; i++ ) {
             //$scope.arrMarkers[0].setMap(null);
-            arrMarkers[i].setVisible(false); 
-            var pointers = document.getElementById(i);
+            arrMarkers[i].map.setVisible(false); 
+            var pointers = document.getElementById(arrMarkers[i].id);
             pointers.className = 'unpointer'
         }  
         checkbox = false;
@@ -153,7 +161,7 @@ angular.module('app')
         var check = document.getElementById('selectAll-checkbox');
         var allMarked = true; 
         for(var i=0; i<arrMarkers.length;i++){
-            if(!arrMarkers[i].getVisible()){
+            if(!arrMarkers[i].map.getVisible()){
                 allMarked = false; 
                 break; 
             }
@@ -168,6 +176,15 @@ angular.module('app')
         check.checked = 0; 
         checkbox = false; 
     }
+    socket.on('location-arrived',function(data){
+        var location = data.split(',');
+        imei = location[0];
+        lat = location[1];
+        lng = location[2]; 
+        findTheMarker(imei).map.setVisible(false);
+        vehiculesFactory.updateLocation(imei,lat,lng);
+        incializeMarkers();
+    });    
     $scope.selectAll = function(){
         if(checkbox){
             hideAllMarkers();
@@ -177,8 +194,8 @@ angular.module('app')
     } 
 
     $scope.selectTheMarker = function(id){ 
-        var theMarker = arrMarkers[0]
-        if(arrMarkers[id].getVisible()){
+        var theMarker = findTheMarker(id)
+        if(theMarker.map.getVisible()){
             hideTheMarker(id);
         }else{
             showTheMarker(id);
